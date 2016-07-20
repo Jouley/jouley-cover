@@ -1,0 +1,65 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../iron-image/iron-image.html">
+
+<!-- @demo demo/index.html -->
+<dom-module id="jouley-cover">
+  <template>
+    <style>
+      :host {
+        display: flex;
+        flex-direction: row;
+        min-width: 128px;
+        min-height: 128px;
+      }
+
+      iron-image {
+        display: flex;
+        flex: 1;
+        width: auto;
+        height: auto;
+      }
+    </style>
+    <iron-image preload></iron-image>
+  </template>
+  <script>
+    (function() {
+      'use strict';
+
+      Polymer({
+        is: 'jouley-cover',
+
+        properties: {
+          thumb: {
+            type: Boolean,
+            value: false
+          }
+        },
+
+        get _imgElement() {
+          return Polymer.dom(this.root).querySelector('iron-image');
+        },
+
+        /**
+         * @type Boolean
+         */
+        set thumb(enabled) {
+          if (enabled) {
+            this._imgElement.sizing = 'cover';
+          } else {
+            this._imgElement.sizing = 'contain';
+          }
+        },
+
+        /**
+         * @type String
+         * @param {string} value The image(-link/data) to display
+         */
+        set src(value) {
+          if (value) {
+            this._imgElement.src = value;
+          }
+        }
+      });
+    })();
+  </script>
+</dom-module>
