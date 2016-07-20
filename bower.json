@@ -3,7 +3,8 @@
   "main": "jouley-cover.html",
   "dependencies": {
     "polymer": "Polymer/polymer#^1.4.0",
-    "iron-image": "^1.2.3"
+    "iron-image": "^1.2.3",
+    "jouley-loading": "*"
   },
   "devDependencies": {
     "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",

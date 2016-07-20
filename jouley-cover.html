@@ -1,11 +1,13 @@
 <link rel="import" href="../polymer/polymer.html">
 <link rel="import" href="../iron-image/iron-image.html">
+<link rel="import" href="../jouley-loading/jouley-loading.html">
 
 <!-- @demo demo/index.html -->
 <dom-module id="jouley-cover">
   <template>
     <style>
       :host {
+        position: relative;
         display: flex;
         flex-direction: row;
         min-width: 128px;
@@ -19,6 +21,9 @@
         height: auto;
       }
     </style>
+    <template is="dom-if" if="[[loading]]">
+      <jouley-loading loading$="[[loading]]"></jouley-loading>
+    </template>
     <iron-image preload></iron-image>
   </template>
   <script>
@@ -30,6 +35,11 @@
 
         properties: {
           thumb: {
+            type: Boolean,
+            value: false
+          },
+
+          loading: {
             type: Boolean,
             value: false
           }
