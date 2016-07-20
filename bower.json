@@ -1,5 +1,6 @@
 {
   "name": "jouley-cover",
+  "version": "0.1.0",
   "main": "jouley-cover.html",
   "dependencies": {
     "polymer": "Polymer/polymer#^1.4.0",
